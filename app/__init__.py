@@ -19,9 +19,7 @@ from flask_login import LoginManager
 
 #################################################
 import logging
-from logging.handlers import SMTPHandler
-#################################################
-from logging.handlers import RotatingFileHandler
+from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 #################################################
 
