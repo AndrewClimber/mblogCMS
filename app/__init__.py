@@ -30,7 +30,7 @@ migrate = Migrate(mblog_app, db)
 login = LoginManager(mblog_app)
 login.login_view = 'login'
 
-print('* mblog_app.debug =',mblog_app.debug)
+print(' * mblog_app.debug =',mblog_app.debug)
 
 if mblog_app.debug == False:
     if mblog_app.config['MAIL_SERVER']:
