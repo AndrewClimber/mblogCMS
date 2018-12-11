@@ -9,6 +9,14 @@ from hashlib import md5
 def load_user(id):
     return User.query.get(int(id))
 
+# Поскольку это вспомогательная таблица, которая не имеет данных, отличных
+# от внешних ключей, то она создана  без соответствующего класса модели.
+
+followers = db.Table('followers',
+    db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
+)
+
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
